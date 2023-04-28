@@ -9,13 +9,12 @@ export const TitleButton = styled.button`
   padding-left: 20px;
   padding-right: 20px;
   border: none;
-  cursor: pointer;
   box-shadow: none;
   display: block;
   background-color: #ccc;
   font-size: 18px;
   box-sizing: border-box;
-  cursor: ${(props) => (props.isActive ? "auto" : "pointer")};
+  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
   border-bottom: 1px solid black;
 `;
 

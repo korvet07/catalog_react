@@ -6,7 +6,7 @@ import Layout from "/src/layout/layout";
 
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
-function ProducrOr404({ products }) {
+function ProductOr404({ products }) {
   const { code } = useParams();
   const product = products.find((product) => product.code.toString() === code);
   return product ? (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="product">
             <Route
               path=":code"
-              element={<ProducrOr404 products={products} />}
+              element={<ProductOr404 products={products} />}
             />
           </Route>
         </Route>

@@ -3,10 +3,11 @@ import { Image } from "/src/elements";
 import Title from "/src/title/title";
 import FullPrice from "/src/full-price/full-price";
 import { List, ListItem, StyledLink } from "./styled";
+import { Container } from '../layout/styled';
 
 export default function Catalog({ products }) {
   return (
-    <>
+    <Container>
       <Title>Каталог</Title>
       <List>
         {products &&
@@ -26,6 +27,6 @@ export default function Catalog({ products }) {
             </ListItem>
           ))}
       </List>
-    </>
+    </Container>
   );
 }

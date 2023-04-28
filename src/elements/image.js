@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   max-width: ${(props) => props.maxWidth}px;
 `;
 

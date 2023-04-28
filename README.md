@@ -1,2 +1,3 @@
 # catalog_react
-Created with CodeSandbox
+Учебный проект, подготовил Усманов Анатолий
+# NODE 16

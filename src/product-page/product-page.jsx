@@ -31,7 +31,7 @@ function ProductPage({ product, showInfoInAccordion }) {
   const [commentsShow, setCommentsShow] = useState(COMMENTS_COUNT);
   const [isShowPopup, setIsShowPopup] = useState(false);
   const price = product.price * productCount;
-  const oldPrice = product.oldPrice * productCount;
+  const oldPrice = product?.oldPrice * productCount;
 
   const tabs = [
     {

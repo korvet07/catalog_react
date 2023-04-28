@@ -7,8 +7,8 @@ export const products = [
     delivery: "1 апреля",
     images: [
       "https://i.ibb.co/gPCq1G4/image.png",
-      "https://i.ibb.co/yFhYrms/hb2NiWc.jpg",
-      "https://i.ibb.co/r6QCT38/NcXNhJb.jpg"
+      "https://3d-m.ru/wp-content/uploads/2021/04/3d-printer-anyform-250-g3-2x-1.jpg",
+      "https://3d-m.ru/wp-content/uploads/2021/04/3d-printer-creality3d-ender-3-1.png"
     ],
     comments: [
       {
@@ -43,11 +43,12 @@ export const products = [
     name: "Эйфелева башня",
     code: 2840368,
     price: 500,
+    oldPrice: null,
     delivery: "1 апреля",
     images: [
       "https://i.ibb.co/r6QCT38/NcXNhJb.jpg",
-      "https://i.ibb.co/gPCq1G4/image.png",
-      "https://i.ibb.co/yFhYrms/hb2NiWc.jpg"
+      "http://skrapbukings.ru/uploads/posts/2017-11/1511957362_1.jpg",
+      "https://cnchub.ru/upload/000/u1/8/a/c3b3efee.jpg"
     ],
     comments: [
       {
@@ -75,8 +76,8 @@ export const products = [
     delivery: "1 апреля",
     images: [
       "https://i.ibb.co/yFhYrms/hb2NiWc.jpg",
-      "https://i.ibb.co/r6QCT38/NcXNhJb.jpg",
-      "https://i.ibb.co/gPCq1G4/image.png"
+      "https://www.mos.ru/upload/newsfeed/newsfeed/wV_DFMt9BSNt(45).jpg",
+      "https://opis-cdn.tinkoffjournal.ru/ip/_WR8trPYMUNXwK7aFoApyGdAs2nWMfKRhQFFm0-yRsA/w:1280/q:100/aHR0cHM6Ly9pbWct/Y2RuLnRpbmtvZmZq/b3VybmFsLnJ1Ly0v/aG93LXRvLXBsYXkt/Y2hlc3MtaW4udGdy/Z21pLi5qcGc"
     ],
     comments: [
       {

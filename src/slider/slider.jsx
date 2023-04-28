@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import SwiperCore, { Navigation } from "swiper";
 import { Image } from "/src/elements";
-import { StyledSider, StyledButton, SlyderWrapper } from "./styled";
+import { StyledSlider, StyledButton, SliderWrapper } from "./styled";
 
 function Slider({ images }) {
   SwiperCore.use([Navigation]);
@@ -11,14 +11,14 @@ function Slider({ images }) {
   const navigationNextRef = useRef(null);
 
   return (
-    <SlyderWrapper>
+    <SliderWrapper>
       <StyledButton left ref={navigationPrevRef} title="Назад">
         &lt;
       </StyledButton>
       <StyledButton right ref={navigationNextRef} title="Вперёд">
         &gt;
       </StyledButton>
-      <StyledSider
+      <StyledSlider
         onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = navigationPrevRef.current;
           swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -46,8 +46,8 @@ function Slider({ images }) {
               />
             </SwiperSlide>
           ))}
-      </StyledSider>
-    </SlyderWrapper>
+      </StyledSlider>
+    </SliderWrapper>
   );
 }
 

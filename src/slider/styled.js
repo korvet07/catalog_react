@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Swiper } from "swiper/react";
 import Button from "/src/button/button";
 
-export const StyledSider = styled(Swiper)`
+export const StyledSlider = styled(Swiper)`
   width: 200px;
   height: 257px;
   margin-left: 30px;
@@ -10,7 +10,7 @@ export const StyledSider = styled(Swiper)`
   z-index: 5;
 `;
 
-export const SlyderWrapper = styled.div`
+export const SliderWrapper = styled.div`
   position: relative;
 `;
 

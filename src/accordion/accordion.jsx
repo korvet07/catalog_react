@@ -24,7 +24,7 @@ function Accordion({ items }) {
             </Wrapper>
           ) : (
             <Wrapper key={item.title}>
-              <TitleButton onClick={() => setActiveIndex(index)}>
+              <TitleButton  onClick={() => setActiveIndex(index)}>
                 {item.title}
               </TitleButton>
               <ContentWrapper>
