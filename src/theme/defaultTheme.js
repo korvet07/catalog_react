@@ -4,7 +4,7 @@ export const theme = {
   buttonColor: "yellow",
   buttonHover: "orange",
   indent: "20px",
-  font: 'Arial, "Helvetica", sans-serif',
+  font: '"Montserrat", "Helvetica", sans-serif',
   button: {
     large: {
       height: "40px",

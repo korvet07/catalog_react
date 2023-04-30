@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Botton from "/src/button/button";
+import Button from "/src/button/button";
 export const Wrapper = styled.div`
   border: 1px solid black;
   padding: 15px;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   z-index: 100;
 `;
 
-export const Close = styled(Botton)`
+export const Close = styled(Button)`
   position: absolute;
   top: 0;
   right: 5px;

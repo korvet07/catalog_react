@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button = styled.button`
+export default styled.button`
   padding: 0;
   border: none;
   cursor: pointer;
@@ -15,5 +15,3 @@ const Button = styled.button`
     box-shadow: none;
   }
 `;
-
-export default Button;

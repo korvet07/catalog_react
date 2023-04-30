@@ -3,15 +3,15 @@ import { Li, P } from "/src/elements";
 import Title from "/src/title/title";
 import Button from "/src/button/button";
 
-export const CoomentsTitle = styled(Title)`
+export const CommentsTitle = styled(Title)`
   margin-bottom: ${(props) => props.theme.indent};
 `;
 
-export const CoomentsLi = styled(Li)`
+export const CommentsLi = styled(Li)`
   margin-bottom: 10px;
 `;
 
-export const CoomentsButton = styled(Button)`
+export const CommentsButton = styled(Button)`
   margin-top: ${(props) => props.theme.indent};
 `;
 

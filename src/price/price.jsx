@@ -6,6 +6,7 @@ export const Price = styled.span.attrs((props) => ({
   font-size: 28px;
   font-weight: bold;
   line-height: 1;
+  color:#07318a;
 `;
 
 export default Price;

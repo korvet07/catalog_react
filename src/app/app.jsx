@@ -3,8 +3,8 @@ import { products } from "/src/mock";
 import ProductPage from "/src/product-page/product-page";
 import Catalog from "/src/catalog/catalog";
 import Layout from "/src/layout/layout";
-
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { GlobalStyle } from './styled';
 
 function ProductOr404({ products }) {
   const { code } = useParams();
@@ -19,6 +19,7 @@ function ProductOr404({ products }) {
 export default function App() {
   return (
     <BrowserRouter>
+    <GlobalStyle/>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Catalog products={products} />} />
