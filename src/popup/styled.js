@@ -1,15 +1,32 @@
 import styled from "styled-components";
 import Button from "/src/button/button";
+
 export const Wrapper = styled.div`
-  border: 1px solid black;
-  padding: 15px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+`;
+
+export const StyledPopup = styled.div`
+  position: absolute;
+  padding: 20px;
   background-color: #fff;
   min-width: 500px;
-  z-index: 100;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 25px 50px rgba(0,0,0,.15);
+  border-radius: 30px;
+
+  @media (${({ theme }) => theme.media.medium_mob}){
+    min-width: 0;
+  }
 `;
 
 export const Close = styled(Button)`

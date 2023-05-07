@@ -1,20 +1,19 @@
 import React from "react";
-import { Wrapper, Container } from "./styled";
+import { Wrapper } from "./styled";
 import { Outlet } from "react-router-dom";
 import Header from './header/header';
 import Footer from './footer/footer';
 
 
-export default function Layout() {
+export default function Layout({ showPopup }) {
+
   return (
-    <Wrapper>
+    <Wrapper showPopup={showPopup}>
       <Header />
       <main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </main>
-      <Footer/>
+      <Footer />
     </Wrapper>
   );
 }

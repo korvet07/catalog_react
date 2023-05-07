@@ -9,6 +9,17 @@ export const List = styled(Ul)`
   grid-template-rows: auto;
   gap: 35px;
   text-align: center;
+  padding: 50px 0;
+
+  @media (${({ theme }) => theme.media.large_tab}) {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    
+  }
+
+  @media (${({ theme }) => theme.media.medium_mob}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ListItem = styled(Li)`

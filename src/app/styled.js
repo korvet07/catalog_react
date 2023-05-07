@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import montserratBoldWoff from "/src/assets/fonts/montserrat-bold.woff";
-import  montserratBoldWoff2 from "/src/assets/fonts/montserrat-bold.woff2";
+import montserratBoldWoff2 from "/src/assets/fonts/montserrat-bold.woff2";
 import montserratExtralightWoff from "/src/assets/fonts/montserrat-extralight.woff";
 import montserratExtralightWoff2 from "/src/assets/fonts/montserrat-extralight.woff2";
 import montserratRegularWoff from "/src/assets/fonts/montserrat-regular.woff";
-import  montserratRegularWoff2 from "/src/assets/fonts/montserrat-regular.woff2";
+import montserratRegularWoff2 from "/src/assets/fonts/montserrat-regular.woff2";
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -53,8 +53,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 * {
-  transition: color, transform 0.1s, 0.2s ease-out;
+  transition: all 0.1s ease-out;
   box-sizing: border-box;
 }
-
+.toast-message {
+    color: black;
+  }
 `;

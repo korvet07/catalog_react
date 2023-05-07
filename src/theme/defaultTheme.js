@@ -5,6 +5,10 @@ export const theme = {
   buttonHover: "orange",
   indent: "20px",
   font: '"Montserrat", "Helvetica", sans-serif',
+  media: {
+    large_tab: '(max-width: 1220px)',
+    medium_mob: '(max-width: 780px)',
+  },
   button: {
     large: {
       height: "40px",

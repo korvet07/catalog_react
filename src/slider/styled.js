@@ -3,25 +3,27 @@ import { Swiper } from "swiper/react";
 import Button from "/src/button/button";
 
 export const StyledSlider = styled(Swiper)`
-  width: 200px;
-  height: 257px;
-  margin-left: 30px;
-  margin-right: 30px;
+  max-width: 400px;
+  max-height: 657px;
+  margin: 0 auto;
   z-index: 5;
 `;
 
 export const SliderWrapper = styled.div`
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 400px;
   position: relative;
+  justify-items: center;
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledButtonPrev = styled(Button)`
   position: absolute;
   z-index: 10;
   top: 0;
   bottom: 0;
   margin: auto;
-  left: ${(props) => (props.left ? "-3px" : "auto")};
-  right: ${(props) => (props.right ? "-3px" : "auto")};
+  left: 10px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -29,3 +31,8 @@ export const StyledButton = styled(Button)`
   line-height: 1;
   padding: 0;
 `;
+
+export const StyledButtonNext = styled(StyledButtonPrev)`
+  left: auto;
+  right: 10px;
+`

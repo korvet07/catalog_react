@@ -5,4 +5,5 @@ export const Label = styled.label`
   margin-bottom: 20px;
   width: 300px;
   justify-content: space-between;
+
 `;

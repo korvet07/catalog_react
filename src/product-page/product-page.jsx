@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Title from "/src/title/title";
+
 import Code from "/src/code/code";
 import Description from "/src/description/description";
 import Comments from "/src/comments/comments";
@@ -9,27 +9,35 @@ import Tabs from "/src/tabs/tabs";
 import PopUp from "/src/popup/popup";
 import Order from "/src/order/order";
 import Accordion from "/src/accordion/accordion";
-
+import iconDelivery from "/src/assets/icon-fast-delivery-.svg"
 import {
   StyledProductPage,
   Header,
   ProductWrapper,
   ProductInfo,
   ProductInfoLine,
+  ProductInfoDelivery,
   PageCounter,
   BuyButton,
   PageFullPrice,
-  DeliveryValue
+  DeliveryValue,
+  Delivery,
+  TitleProduct
 } from "./styled";
+import { deliveryDay } from '../mock';
+import { HandySvg } from 'handy-svg';
+import { Container } from '../layout/styled';
+import H4 from '../elements/h4';
+import H3 from '../elements/h3';
 
-const MAX_TEXT_SIZE = 200;
+const MAX_TEXT_SIZE = 100;
 const COMMENTS_COUNT = 3;
 
-function ProductPage({ product, showInfoInAccordion }) {
+function ProductPage({ product, showInfoInAccordion, isShowPopup, setIsShowPopup }) {
   const [productCount, setProductCount] = useState(1);
   const [isShowAllDescription, setIsShowAllDescription] = useState(false);
   const [commentsShow, setCommentsShow] = useState(COMMENTS_COUNT);
-  const [isShowPopup, setIsShowPopup] = useState(false);
+
   const price = product.price * productCount;
   const oldPrice = product?.oldPrice * productCount;
 
@@ -40,11 +48,21 @@ function ProductPage({ product, showInfoInAccordion }) {
         <Description
           text={
             isShowAllDescription
-              ? product.description
-              : product.description.slice(0, MAX_TEXT_SIZE)
+              ? product?.description
+              : product?.description.slice(0, MAX_TEXT_SIZE)
           }
           onShowMore={() => setIsShowAllDescription(!isShowAllDescription)}
           isShowAllDescription={isShowAllDescription}
+        />
+      )
+    },
+    {
+      title: "Характеристики",
+      content: (
+        <Comments
+          comments={product.comments.slice(0, commentsShow)}
+          onShowMore={() => setCommentsShow(commentsShow + COMMENTS_COUNT)}
+          allCommentsLength={product.comments.length}
         />
       )
     },
@@ -61,44 +79,60 @@ function ProductPage({ product, showInfoInAccordion }) {
   ];
 
   return (
-    <StyledProductPage>
-      <Header>
-        <Title>{product.name}</Title>
-        <Code>{product.code}</Code>
-      </Header>
-      <ProductWrapper>
-        <Slider images={product.images} />
-        <ProductInfo>
-          <ProductInfoLine>
-            Цена: <PageFullPrice oldPrice={oldPrice} price={price} />
-          </ProductInfoLine>
-          <ProductInfoLine>
-            Количество:{" "}
-            <PageCounter
-              value={productCount}
-              minValue={1}
-              onChange={setProductCount}
-            />
-          </ProductInfoLine>
-          <ProductInfoLine>
-            <span>Доставка:</span>{" "}
-            <DeliveryValue>{product.delivery}</DeliveryValue>
-          </ProductInfoLine>
-          <BuyButton size="large" onClick={() => setIsShowPopup(true)}>
-            Купить
-          </BuyButton>
-          <Popularity count={product.comments.length} />
-        </ProductInfo>
-      </ProductWrapper>
-      {showInfoInAccordion ? <Accordion items={tabs} /> : <Tabs tabs={tabs} />}
-      <PopUp
-        isShow={isShowPopup}
-        onClose={() => setIsShowPopup(false)}
-        title="Оформление"
-      >
-        <Order />
-      </PopUp>
-    </StyledProductPage>
+    <Container>
+      <StyledProductPage>
+        <Header>
+          <TitleProduct>{product.name}</TitleProduct>
+          <Code>{product.code}</Code>
+        </Header>
+        <ProductWrapper>
+          <Slider images={product.images} />
+          <ProductInfo>
+            <ProductInfoLine>
+              Цена: <PageFullPrice oldPrice={oldPrice} price={price} />
+            </ProductInfoLine>
+            <ProductInfoLine>
+              <span>Страна:</span>
+              <H4>{product.country}</H4>
+            </ProductInfoLine>
+            <ProductInfoLine>
+              <span>Производитель:</span>
+              <H3>{product.fabricator}</H3>
+            </ProductInfoLine>
+            <ProductInfoLine>
+              Количество:{" "}
+              <PageCounter
+                value={productCount}
+                minValue={1}
+                onChange={setProductCount}
+              />
+            </ProductInfoLine>
+            <ProductInfoDelivery deliveryDay={deliveryDay}>
+              <Delivery>Доставка:</Delivery>
+              <DeliveryValue deliveryDay={deliveryDay}>{product.delivery}</DeliveryValue>
+              <HandySvg
+                src={iconDelivery}
+                width="50"
+                height="50"
+                className="iconDelivery"
+              />
+            </ProductInfoDelivery>
+            <BuyButton size="large" onClick={() => setIsShowPopup(true)}>
+              Купить
+            </BuyButton>
+            <Popularity count={product.comments.length} />
+          </ProductInfo>
+        </ProductWrapper>
+        {showInfoInAccordion ? <Accordion items={tabs} /> : <Tabs tabs={tabs} />}
+        <PopUp
+          isShow={isShowPopup}
+          onClose={() => setIsShowPopup(false)}
+          title="Оформление"
+        >
+          <Order isShow={isShowPopup} />
+        </PopUp>
+      </StyledProductPage>
+    </Container>
   );
 }
 

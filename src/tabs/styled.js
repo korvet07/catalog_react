@@ -2,14 +2,17 @@ import styled from "styled-components";
 import Title from "/src/title/title";
 
 export const TitleList = styled.div`
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: #ddd;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
 `;
 
-export const TitleButton = styled.button`
+export const TitleButton = styled.button.attrs((props) => ({
+  disabled: props.active,
+}))`
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
@@ -19,11 +22,14 @@ export const TitleButton = styled.button`
   box-shadow: none;
   display: block;
   background-color: ${(props) => (props.active ? "#CCC" : "none")};
+  
+  &:disabled {
+    cursor: auto;
+  }
 `;
 
 export const TitleText = styled(Title)`
-  color: ${(props) =>
-    props.active ? props.theme.textColor : props.theme.textColorMuted};
+  color: ${(props) => props.active ? props.theme.textColor : props.theme.textColorMuted};
 `;
 
 export const Content = styled.div`

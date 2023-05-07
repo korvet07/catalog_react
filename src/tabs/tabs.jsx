@@ -12,7 +12,7 @@ function Tabs({ tabs }) {
           tabs.map((item, index) => {
             if (index === activeTab) {
               return (
-                <TitleButton active key={item.title}>
+                <TitleButton active key={item.title} >
                   <TitleText small active as="h2">
                     {item.title}
                   </TitleText>
@@ -20,7 +20,7 @@ function Tabs({ tabs }) {
               );
             }
             return (
-              <TitleButton key={item.title} onClick={() => setActiveTab(index)}>
+              <TitleButton key={item.title} onClick={() => setActiveTab(index)} >
                 <TitleText small as="h2">
                   {item.title}
                 </TitleText>

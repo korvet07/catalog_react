@@ -7,8 +7,8 @@ export function Logo() {
     <LogoWrapper>
       <HandySvg
         src={logoImage}
-        width="97"
-        height="41"
+        width="100"
+        height="100"
       />
     </LogoWrapper>
   )

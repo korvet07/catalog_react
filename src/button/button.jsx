@@ -34,6 +34,7 @@ const Button = styled.button`
     opacity: 0.7;
     box-shadow: none;
     background-color: ${(props) => props.theme.buttonColor};
+    cursor: auto;
   }
 `;
 

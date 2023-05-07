@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import SwiperCore, { Navigation } from "swiper";
 import { Image } from "/src/elements";
-import { StyledSlider, StyledButton, SliderWrapper } from "./styled";
+import { StyledSlider, StyledButtonPrev, SliderWrapper, StyledButtonNext } from "./styled";
 
 function Slider({ images }) {
   SwiperCore.use([Navigation]);
@@ -12,12 +12,12 @@ function Slider({ images }) {
 
   return (
     <SliderWrapper>
-      <StyledButton left ref={navigationPrevRef} title="Назад">
+      <StyledButtonPrev left ref={navigationPrevRef} title="Назад">
         &lt;
-      </StyledButton>
-      <StyledButton right ref={navigationNextRef} title="Вперёд">
+      </StyledButtonPrev>
+      <StyledButtonNext right ref={navigationNextRef} title="Вперёд">
         &gt;
-      </StyledButton>
+      </StyledButtonNext>
       <StyledSlider
         onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = navigationPrevRef.current;

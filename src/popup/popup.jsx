@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Close, Wrapper, Header } from "./styled";
+import { Close, Wrapper, Header, StyledPopup } from "./styled";
 
 export default function PopUp({ isShow, onClose, title, children }) {
   const handlerEsc = (evt) => {
-    if (evt.keyCode === 27) {
+    if (evt.key === 'Escape') {
       onClose && onClose();
     }
   };
@@ -16,6 +16,7 @@ export default function PopUp({ isShow, onClose, title, children }) {
   }, []);
   return isShow ? (
     <Wrapper>
+    <StyledPopup>
       <Header>
         {title}{" "}
         <Close size="small" onClick={onClose}>
@@ -23,6 +24,7 @@ export default function PopUp({ isShow, onClose, title, children }) {
         </Close>
       </Header>
       {children}
+      </StyledPopup>
     </Wrapper>
   ) : null;
 }
