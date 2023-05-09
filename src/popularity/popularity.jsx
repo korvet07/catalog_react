@@ -7,8 +7,8 @@ function Popularity({ count }) {
     result = <p>Будь первым. Поделись впечатлениями</p>;
   }
 
-  if (count > 5) {
-    result = <p style={{ color: "green" }}>Проверенный товар</p>;
+  if (count > 2) {
+    result = <p style={{ color: "#00FA9A" }}>Проверенный товар</p>;
   }
   return result;
 }

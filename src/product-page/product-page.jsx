@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Code from "/src/code/code";
 import Description from "/src/description/description";
 import Comments from "/src/comments/comments";
@@ -29,17 +28,27 @@ import { HandySvg } from 'handy-svg';
 import { Container } from '../layout/styled';
 import H4 from '../elements/h4';
 import H3 from '../elements/h3';
+import Features from '../features/features';
 
 const MAX_TEXT_SIZE = 100;
 const COMMENTS_COUNT = 3;
 
-function ProductPage({ product, showInfoInAccordion, isShowPopup, setIsShowPopup }) {
+function ProductPage({ product, isShowPopup, setIsShowPopup }) {
   const [productCount, setProductCount] = useState(1);
   const [isShowAllDescription, setIsShowAllDescription] = useState(false);
   const [commentsShow, setCommentsShow] = useState(COMMENTS_COUNT);
-
+  const [showInfoInAccordion, setShowInfoInAccordion] = useState(false)
   const price = product.price * productCount;
   const oldPrice = product?.oldPrice * productCount;
+
+  useEffect(() => {
+
+    if ((window.matchMedia("(max-width: 780px)").matches)) {
+      setShowInfoInAccordion(true);
+    } else {
+      setShowInfoInAccordion(false);
+    }
+  }, [showInfoInAccordion, setShowInfoInAccordion]);
 
   const tabs = [
     {
@@ -59,11 +68,7 @@ function ProductPage({ product, showInfoInAccordion, isShowPopup, setIsShowPopup
     {
       title: "Характеристики",
       content: (
-        <Comments
-          comments={product.comments.slice(0, commentsShow)}
-          onShowMore={() => setCommentsShow(commentsShow + COMMENTS_COUNT)}
-          allCommentsLength={product.comments.length}
-        />
+        <Features feature={product.feature}/>
       )
     },
     {

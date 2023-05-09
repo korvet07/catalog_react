@@ -9,7 +9,7 @@ function FullPrice({ price, oldPrice, className }) {
     <PriceWrapper className={className}>
       {showOldPrice && <OldPrice value={oldPrice} />}
       {showOldPrice && " "}
-      <InnerPrice value={price} />
+      <InnerPrice value={price} className="value-price"/>
     </PriceWrapper>
   );
 }

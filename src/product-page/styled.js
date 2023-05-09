@@ -12,7 +12,7 @@ const valueStyle = css`
   color: ${(props) => props.theme.textColor};
 `;
 
-export const StyledProductPage = styled.article`
+export const StyledProductPage = styled.section`
   padding: ${(props) => props.theme.indent};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-family: ${(props) => props.theme.font};
@@ -25,6 +25,7 @@ export const Header = styled.header`
 `;
 
 export const ProductWrapper = styled.section`
+  padding: 35px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: ${(props) => props.theme.indent};
@@ -36,7 +37,7 @@ export const ProductWrapper = styled.section`
 `;
 
 export const ProductInfo = styled.div`
-  padding: 20px;
+  padding: 35px 20px 20px;
   border-left: 1px solid #888;
   box-sizing: border-box;
   margin-bottom: ${(props) => props.theme.indent};
@@ -62,7 +63,7 @@ export const ProductInfoDelivery = styled(ProductInfoLine).attrs((props) => ({
 
     .iconDelivery {
       fill: ${(props) => props.deliveryDay >= 1 && props.deliveryDay <= 3 ? '#00FA9A' :
-      props.deliveryDay >= 4 && props.deliveryDay <= 5 ? '#FFD700' : '#e55c5c'};
+    props.deliveryDay >= 4 && props.deliveryDay <= 5 ? '#FFD700' : '#e55c5c'};
       margin-bottom: 5px;
     }
 `;

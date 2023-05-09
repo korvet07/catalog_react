@@ -1,7 +1,7 @@
 import { COMMENTS, COUNTRIES, FABRICATORS, NAME_PRODUCT, URLS_IMG } from './const';
 
 export const getRandomIntInclusive = (min, max) => {
-  if ((min >= max) || (min < 0 || max < 0)) {
+  if (min >= max) {
     return 0;
   }
   min = Math.ceil(min);
@@ -55,3 +55,4 @@ export const getArrayImg = (arr, n = (URLS_IMG?.length - 1)) => arr[getIndexImg(
 export const getArrayComments = (arr, n = (COMMENTS?.length - 1)) => arr[getIndexComments(n)];
 export const getArrayCountry = (arr, n = (COUNTRIES.length - 1)) => arr[getIndexCountry(n)];
 export const getArrayFabricator = (arr, n = (FABRICATORS.length - 1)) => arr[getIndexFabricator(n)];
+export  const sumPrice = (arrs) => arrs.reduce((sum, item) => sum + item, 0);

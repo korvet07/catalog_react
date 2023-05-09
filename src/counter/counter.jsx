@@ -15,6 +15,7 @@ function Counter({ className, value, onChange, minValue }) {
         -
       </Button>
       <Value
+        className="input-price"
         value={value}
         size={1}
         onChange={(e) => {

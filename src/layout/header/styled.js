@@ -22,6 +22,23 @@ export const StyledNav = styled.nav`
 
 export const StyledLinkHeader = styled(NavLink)`
   ${ACss}
+  position: relative;
+
+    .basked-value {
+      position: absolute;
+      font-size: 16px;
+      line-height: 100%;
+      width: 23px;
+      height: 23px;
+      color: #ffffff;
+      background-color: coral;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 3px;
+      right: -5px;
+    }
 
   svg {
     fill: #3F4E65;
@@ -128,7 +145,7 @@ export const WrapperContacts = styled.div`
 
   @media (${({ theme }) => theme.media.medium_mob}){
     display: flex;
-    gap: 20px;
+    gap: 5px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;

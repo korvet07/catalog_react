@@ -9,8 +9,20 @@ import { HandySvg } from 'handy-svg';
 import { Container } from '../styled';
 import { VisuallyHidden } from '../../elements/index';
 
+function BaskedLink({ quantity }) {
+  return (
+    <StyledLinkHeader to={`/basked`}>
+      <HandySvg
+        src={iconBasket}
+        width="30"
+        height="30"
+      />
+      {quantity?.length ? <span className="basked-value">{quantity.length}</span> : null}
+    </StyledLinkHeader>
+  )
+}
 
-export default function Header() {
+export default function Header({ quantity }) {
   const [burgerStatus, setBurgerStatus] = useState(false);
 
   return (
@@ -30,13 +42,7 @@ export default function Header() {
             <StyledLinkHeader to="#">Контакты</StyledLinkHeader>
           </WrapperLink>
           <WrapperContacts>
-            <StyledLinkHeader to={`/basket`}>
-              <HandySvg
-                src={iconBasket}
-                width="30"
-                height="30"
-              />
-            </StyledLinkHeader>
+            <BaskedLink quantity={quantity} />
             <StyledLinkHeader as="a" href={`tel:+74950005252`}>
               <HandySvg
                 src={iconTel}

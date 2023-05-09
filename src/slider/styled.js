@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
 import Button from "/src/button/button";
+import "swiper/swiper-bundle.min.css";
 
 export const StyledSlider = styled(Swiper)`
   max-width: 400px;
@@ -10,7 +11,6 @@ export const StyledSlider = styled(Swiper)`
 `;
 
 export const SliderWrapper = styled.div`
-  overflow: hidden;
   max-width: 600px;
   max-height: 400px;
   position: relative;

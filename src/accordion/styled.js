@@ -14,7 +14,7 @@ export const TitleButton = styled.button`
   background-color: #ccc;
   font-size: 18px;
   box-sizing: border-box;
-  cursor: ${(props) => (props.isActive ? "none" : "pointer")};
+  cursor: ${(props) => (props.isActive ? "auto" : "pointer")};
   border-bottom: 1px solid black;
 `;
 

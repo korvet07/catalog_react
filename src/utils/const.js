@@ -198,9 +198,29 @@ export const COMMENTS = [
 ];
 
 export const FEATURES = [
-  [
+  
     {
-      
-    }
-  ]
-]
+      power_lamp: "60W",
+      protection: "IP20",
+      plinth_type: "E27",
+      lighting_area: "3m2",
+      voltage: "220-240V",
+      interior: "Для гостиной"
+    },
+  {
+    power_lamp: "80W",
+    protection: "IP21",
+    plinth_type: "E14",
+    lighting_area: "5m2",
+    voltage: "220-240V",
+    interior: "Для спальни"
+  },
+  {
+    power_lamp: "100W",
+    protection: "IP44",
+    plinth_type: "E14",
+    lighting_area: "7m2",
+    voltage: "220-240V",
+    interior: "Для гостиной"
+  },
+];

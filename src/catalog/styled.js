@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Ul, Li } from "/src/elements";
 import { Link } from "react-router-dom";
+import Button from '../button/button';
 
 export const List = styled(Ul)`
   margin-top: ${(props) => props.theme.indent};
@@ -23,8 +24,9 @@ export const List = styled(Ul)`
 `;
 
 export const ListItem = styled(Li)`
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   border: 1px solid #A9A9A9;
   padding: 5px;
   text-align: center;
@@ -36,16 +38,25 @@ export const ListItem = styled(Li)`
 `;
 
 export const StyledLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
   color: ${(props) => props.theme.textColor};
 
     img {
       border-radius: 13px;
+      height: 90%;
     };
+
   &:hover {
     opacity: 0.7;
   }
+`;
+
+export const StyledBaskedButton = styled(Button)`
+  background: #6bb431;
+  text-decoration: none;
+`;
+export const WrapperPrice = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
 `;

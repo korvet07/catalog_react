@@ -59,4 +59,13 @@ export const GlobalStyle = createGlobalStyle`
 .toast-message {
     color: black;
   }
+
+  .swiper-pagination {
+      bottom: -35px !important;
+    }
+
+    :root {
+    --swiper-theme-color: #f1c40f !important;
+}
+  
 `;

@@ -5,11 +5,11 @@ import Header from './header/header';
 import Footer from './footer/footer';
 
 
-export default function Layout({ showPopup }) {
+export default function Layout({ showPopup, quantityBaskedProduct }) {
 
   return (
     <Wrapper showPopup={showPopup}>
-      <Header />
+      <Header quantity={quantityBaskedProduct}/>
       <main>
         <Outlet />
       </main>
