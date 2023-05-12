@@ -59,8 +59,8 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
-  input::-webkit-inner-spin-button,
-  input::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
 

@@ -3,7 +3,6 @@ import { Image } from "/src/elements";
 
 import FullPrice from "/src/full-price/full-price";
 import { StyledBaskedButton, List, ListItem, StyledLink, WrapperPrice, StyledProductTitle } from "./styled";
-import { Container } from '../layout/styled';
 
 function BaskedButton({ product, children, setQuantityBaskedProduct, quantityBaskedProduct }) {
   let baskedProduct = [];

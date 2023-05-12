@@ -45,6 +45,7 @@ export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.textColor};
   text-decoration: none;
   height: 100%;
+  margin-bottom: 15px;
 
     img {
       border-radius: 13px;
@@ -60,11 +61,17 @@ export const StyledBaskedButton = styled(Button)`
   background: #6bb431;
   text-decoration: none;
   height: auto;
+  padding: 10px;
+  margin-top: 10px;
 `;
 export const WrapperPrice = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
+
+  @media (${({ theme }) => theme.media.large_tab}) {
+    padding: 15px;
+  }
 
 `;
 export const StyledProductTitle = styled(H3)`

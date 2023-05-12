@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
-const Button = styled.button`
+const Button = styled.button.attrs((props) => ({
+  type: props?.type ?? "button"
+}))`
   padding: 0;
   border: none;
   cursor: pointer;

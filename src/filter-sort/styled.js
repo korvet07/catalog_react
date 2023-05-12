@@ -79,16 +79,26 @@ export const StyledInputSearch = styled(Input)`
     
 `;
 
-export const WrapperInputsList = styled(Ul)`
+export const WrapperInputsList = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const WrapperInputItem = styled(Li)`
+export const WrapperInputItem = styled.label`
   margin-bottom: 20px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+    input {
+    width: 25px;
+    height: 25px;
+  }
+    span {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const StyledCatalogList = styled.div`
@@ -116,11 +126,20 @@ export const  StyledButtonSort = styled(Button)`
 export const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 30px;
+  gap: 50px;
   padding-right: 15px;
+
+  @media (${({ theme }) => theme.media.large_tab}) {
+    gap: 30px;
+  }
 
   @media (${({ theme }) => theme.media.medium_mob}) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
+`;
+
+export const StyledButtonFilter = styled(Button)`
+  background: #f3ce88;
+  margin-bottom: 20px;
 `;

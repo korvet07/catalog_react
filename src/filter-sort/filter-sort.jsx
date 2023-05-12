@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { FilterTitle, StyledButtonSort, StyledCatalogList, StyledFieldset, StyledFilter, StyledFilterForm, StyledInputPrice, StyledLegend, StyledSort, StyledWrapper, WrapperInputPrice } from './styled';
+import { FilterTitle, StyledButtonFilter, StyledButtonSort, StyledCatalogList, StyledFieldset, StyledFilter, StyledFilterForm, StyledInputPrice, StyledLegend, StyledSort, StyledWrapper, WrapperInputItem, WrapperInputPrice, WrapperInputsList } from './styled';
 import Catalog from '../catalog/catalog';
+import Input from '../elements/input';
+import Button from '../button/button';
 
 export default function FilterSort({ products, setQuantityBaskedProduct, quantityBaskedProduct }) {
   const [dataState, setDataState] = useState(products);
@@ -8,7 +10,7 @@ export default function FilterSort({ products, setQuantityBaskedProduct, quantit
   return (
     <StyledWrapper>
       <StyledFilter>
-      <FilterTitle>Подбор по параметрам</FilterTitle>
+        <FilterTitle>Подбор по параметрам</FilterTitle>
         <StyledFilterForm>
           <StyledFieldset>
             <StyledLegend>Цена ₽</StyledLegend>
@@ -17,6 +19,47 @@ export default function FilterSort({ products, setQuantityBaskedProduct, quantit
               <StyledInputPrice type="number" placeholder="max" name="max" />
             </WrapperInputPrice>
           </StyledFieldset>
+          <StyledFieldset>
+            <StyledLegend>Производитель</StyledLegend>
+            <WrapperInputsList>
+              <WrapperInputItem>
+                <Input type="checkbox" name="Azzardo" /><span>Azzardo</span>
+              </WrapperInputItem>
+              <WrapperInputItem>
+                <Input type="checkbox" name="Banci" /><span>Banci</span>
+              </WrapperInputItem>
+              <WrapperInputItem>
+                <Input type="checkbox" name="Chiaro" /><span>Chiaro</span>
+              </WrapperInputItem>
+            </WrapperInputsList>
+          </StyledFieldset>
+          <StyledFieldset>
+            <StyledLegend>Защита</StyledLegend>
+            <WrapperInputsList>
+              <WrapperInputItem>
+                <Input type="checkbox" name="IP20" /><span>IP20</span>
+              </WrapperInputItem>
+              <WrapperInputItem>
+                <Input type="checkbox" name="IP21" /><span>IP21</span>
+              </WrapperInputItem>
+              <WrapperInputItem>
+                <Input type="checkbox" name="IP44" /><span>IP44</span>
+              </WrapperInputItem>
+            </WrapperInputsList>
+          </StyledFieldset>
+          <StyledFieldset>
+            <StyledLegend>Тип цоколя</StyledLegend>
+            <WrapperInputsList>
+              <WrapperInputItem>
+                <Input type="checkbox" name="E14" /><span>E14</span>
+              </WrapperInputItem>
+              <WrapperInputItem>
+                <Input type="checkbox" name="E27" /><span>E27</span>
+              </WrapperInputItem>
+            </WrapperInputsList>
+          </StyledFieldset>
+          <StyledButtonFilter size="large">Показать</StyledButtonFilter>
+          <StyledButtonFilter size="large" type="reset">Сбросить</StyledButtonFilter>
         </StyledFilterForm>
       </StyledFilter>
       <StyledCatalogList>
