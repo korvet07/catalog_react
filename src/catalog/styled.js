@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Ul, Li } from "/src/elements";
 import { Link } from "react-router-dom";
 import Button from '../button/button';
+import { H3 } from '../elements';
 
 export const List = styled(Ul)`
   margin-top: ${(props) => props.theme.indent};
@@ -10,7 +11,7 @@ export const List = styled(Ul)`
   grid-template-rows: auto;
   gap: 35px;
   text-align: center;
-  padding: 50px 0;
+  margin-bottom: 50px;
 
   @media (${({ theme }) => theme.media.large_tab}) {
     grid-template-columns: 1fr 1fr;
@@ -26,7 +27,7 @@ export const List = styled(Ul)`
 export const ListItem = styled(Li)`
   display: flex;
   flex-direction: column;
-
+  max-width: 400px;
   border: 1px solid #A9A9A9;
   padding: 5px;
   text-align: center;
@@ -35,10 +36,15 @@ export const ListItem = styled(Li)`
   &:hover{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
+  @media (${({ theme }) => theme.media.medium_mob}) {
+    margin: 0 auto;
+  }
 `;
 
 export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.textColor};
+  text-decoration: none;
+  height: 100%;
 
     img {
       border-radius: 13px;
@@ -53,10 +59,17 @@ export const StyledLink = styled(Link)`
 export const StyledBaskedButton = styled(Button)`
   background: #6bb431;
   text-decoration: none;
+  height: auto;
 `;
 export const WrapperPrice = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
 
+`;
+export const StyledProductTitle = styled(H3)`
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 20px;
 `;

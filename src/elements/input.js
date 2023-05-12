@@ -10,4 +10,5 @@ export default styled.input.attrs((props) => ({
   padding: 0 5px;
   border: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+  appearance: none;
   `;

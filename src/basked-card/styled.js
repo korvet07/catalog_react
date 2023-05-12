@@ -11,4 +11,4 @@ export const ButtonDel = styled(Button)`
   background: coral;
   margin-top: auto;
   margin-left: auto;
-`
+`;

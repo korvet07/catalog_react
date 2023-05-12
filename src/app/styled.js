@@ -43,6 +43,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     display: grid;
+    padding: 0;
+    margin: 0;
     grid-template-rows: 1fr;
     position: relative;
     font-size: 18px;
@@ -56,6 +58,12 @@ export const GlobalStyle = createGlobalStyle`
   transition: all 0.1s ease-out;
   box-sizing: border-box;
 }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
 .toast-message {
     color: black;
   }

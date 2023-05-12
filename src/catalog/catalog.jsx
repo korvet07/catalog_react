@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Image } from "/src/elements";
-import Title from "/src/title/title";
+
 import FullPrice from "/src/full-price/full-price";
-import { StyledBaskedButton, List, ListItem, StyledLink, WrapperPrice } from "./styled";
+import { StyledBaskedButton, List, ListItem, StyledLink, WrapperPrice, StyledProductTitle } from "./styled";
 import { Container } from '../layout/styled';
 
 function BaskedButton({ product, children, setQuantityBaskedProduct, quantityBaskedProduct }) {
@@ -39,7 +39,7 @@ export default function Catalog({ products, setQuantityBaskedProduct, quantityBa
       <ListItem key={product.code}>
         <StyledLink to={`/product/${product.code}`}>
           <Image src={product.images[0]} />
-          <h2 style={{ marginTop: 0 }}>{product.name}</h2>
+          <StyledProductTitle>{product.name}</StyledProductTitle>
         </StyledLink>
         <WrapperPrice>
           <FullPrice
@@ -52,15 +52,14 @@ export default function Catalog({ products, setQuantityBaskedProduct, quantityBa
     ));
 
   return (
-    <section>
-      <Container>
-        <Title>Каталог</Title>
-        {catalogList.length ?
-          <List>
-            {catalogList}
-          </List>
-          : null}
-      </Container>
-    </section>
+
+    <>
+      {catalogList.length ?
+        <List>
+          {catalogList}
+        </List>
+        : null}
+    </>
+
   );
 }

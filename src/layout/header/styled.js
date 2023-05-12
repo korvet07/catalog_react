@@ -128,7 +128,7 @@ export const ButtonBurger = styled.button`
         top: ${(props) => props.burgerStatus ? '16' : '23'}px;
         left: 10px;
         width: 15px;
-        height: 3px;
+        height: 2px;
         background-color: #ffffff;
         border-radius: 3px;
         ${(props) => props.burgerStatus ? 'transform: rotate(45deg);' : ''}

@@ -3,6 +3,13 @@ import Price from "/src/price/price";
 
 export const InnerPrice = styled(Price)`
   margin-left: ${(props) => props.theme.indent};
+
+  @media (${({ theme }) => theme.media.large_tab}) {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  
 `;
 
 export const PriceWrapper = styled.span`
