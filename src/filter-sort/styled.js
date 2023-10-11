@@ -19,7 +19,9 @@ export const FilterTitle = styled.h2`
   text-transform: uppercase;
 `;
 
-export const StyledFilterForm = styled.form`
+export const StyledFilterForm = styled.form.attrs((props) => ({
+  name: props.name ?? undefined,
+}))`
   display: flex;
   flex-direction: column;
 `;

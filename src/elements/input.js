@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.input.attrs((props) => ({
   type: props?.type ?? "text",
   name: props.name,
-  placeholder: props?.placeholder ?? false,
+  placeholder: props?.placeholder ?? undefined,
   minlength: 2,
   required: !!(props?.required || ''),
 }))`
